@@ -28,5 +28,5 @@ app.get('/adjective', function(req, res) {
 });
 
 app.get("/", function(req, res) {
-  res.send("hello, universe!");
+  res.sendFile("index.html");
 });
