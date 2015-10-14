@@ -1,11 +1,35 @@
 <html>
-<body>
-  <button id="name">Get a random band name.</button>
-  <p>
-    Your name:
-    <span id="adjective"></span>
-  </p>
-  <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-  <script src="script.js"></script>
-</body>
+
+  <head>
+    <title>Welcome to the Bad-Ass Band Name Generator!</title>
+  </head>
+
+  <body>
+    <h2>Need a Name for Your Band?</h2>
+
+    <button id="name">Get a Bad-Ass Band Name</button>
+    <p>
+      Your band name:
+      <span id="adjective"></span>
+      <span id="verb"></span>
+      <span id="noun"></span>
+    </p>
+
+    <h3>Don't like it? Okay, let's hear your idea...</h3>
+    <form id="submitWords">
+      <label>Give us a new adjective:</label>
+      <input type="text" name="adjective" id="user-adjective"><br>
+      <label>Give us a new verb:</label>
+      <input type="text" name="verb" id="user-verb"><br>
+      <label>Give us a new noun:</label>
+      <input type="text" name="noun" id="user-noun"><br>
+      <input type="submit" value="Submit Name">
+    </form>
+    <p id="adjectiveRes"></p>
+    <p id="verbRes"></p>
+    <p id="nounRes"></p>
+
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
