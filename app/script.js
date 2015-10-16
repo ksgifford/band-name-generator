@@ -2,52 +2,54 @@
 
 $(function() {
 
-  $("button").click(function() {
-    $.get("http://localhost:3000/adjective", function(response) {
+  $('button').click(function() {
+    $.get('http://localhost:3000/adjective', function(response) {
       var adjective = response.word;
-      $("#adjective").text(adjective);
+      $('#adjective').text(adjective);
     });
 
-    $.get("http://localhost:3000/verb", function(response) {
+    $.get('http://localhost:3000/verb', function(response) {
       var verb = response.word;
-      $("#verb").text(verb);
+      $('#verb').text(verb);
     });
 
-    $.get("http://localhost:3000/noun", function(response) {
+    $.get('http://localhost:3000/noun', function(response) {
       var noun = response.word;
-      $("#noun").text(noun);
+      $('#noun').text(noun);
     });
   });
 
-  $("#submitWords").on("submit", function(e) {
+  $('#submitWords').on('submit', function(e) {
     e.preventDefault();
 
-    var adjective = $("input[name=adjective]").val();
-    var verb = $("input[name=verb]").val();
-    var noun = $("input[name=noun").val();
+    var adjective = $('input[name=adjective]').val();
+    var verb = $('input[name=verb]').val();
+    var noun = $('input[name=noun').val();
     var adjPost;
     var verbPost;
     var nounPost;
 
-    if(adjective) {
+    if (adjective) {
       adjPost = {word: adjective};
-      $.post("adjective", adjPost, function(response) {
+      $.post('adjective', adjPost, function(response) {
         var adjectiveRes = response.msg;
-        $("#adjectiveRes").text(adjectiveRes);
+        $('#adjectiveRes').text(adjectiveRes);
       });
     }
-    if(verb) {
+
+    if (verb) {
       verbPost = {word: verb};
-      $.post("verb", verbPost, function(response) {
+      $.post('verb', verbPost, function(response) {
         var verbRes = response.msg;
-        $("#verbRes").text(verbRes);
+        $('#verbRes').text(verbRes);
       });
     }
-    if(noun) {
+
+    if (noun) {
       nounPost = {word: noun};
-      $.post("noun", nounPost, function(response) {
+      $.post('noun', nounPost, function(response) {
         var nounRes = response.msg;
-        $("#nounRes").text(nounRes);
+        $('#nounRes').text(nounRes);
       });
     }
   });

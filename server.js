@@ -1,16 +1,18 @@
-var express = require("express");
+'use strict';
+
+var express = require('express');
 var app = express();
-var Adjective = require("./lib/adjective.js");
-var Verb = require("./lib/verb.js");
-var Noun = require("./lib/noun.js");
-var getRandomWord = require("./lib/getRandomWord.js");
-var postWord = require("./lib/postWord.js");
+var Adjective = require('./lib/adjective.js');
+var Verb = require('./lib/verb.js');
+var Noun = require('./lib/noun.js');
+var getRandomWord = require('./lib/getRandomWord.js');
+var postWord = require('./lib/postWord.js');
 var port = process.env.PORT || 3000;
-var bodyparser = require("body-parser");
+var bodyparser = require('body-parser');
 
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
-app.use(express.static(__dirname + "/app/"));
+app.use(express.static(__dirname + '/app/'));
 
 var adjective = new Adjective();
 var verb = new Verb();
@@ -47,6 +49,6 @@ app.post('/noun', function(req, res) {
   res.json(word);
 });
 
-app.get("/", function(req, res) {
-  res.sendFile("index.html");
+app.get('/', function(req, res) {
+  res.sendFile('index.html');
 });
